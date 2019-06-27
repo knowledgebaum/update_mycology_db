@@ -4,17 +4,18 @@ from match_model import session, dict_to_sql
 
 
 def regex_string_maker(col_nums):
-    base_string = "([A-Z]{3,} [A-Z]{3,}|[A-Z]{3,})(  .*\\n)"
-    string_list = []
-    res_string = ""
+    base_string = "([A-Z]{3,} [A-Z]{3,}|[A-Z]{3,})(  .*\n)"
 
-    for i in range(col_nums):
-        string_list.append(base_string)
-        #res_string += base_string
-        #print(i)
+    # Python is pretty sweet
+    # if you do "this" * 4
+    # you get back
+    # In [1]: "this" * 4
+    # Out[1]: 'thisthisthisthis'
 
-    res_string = "".join(string_list)
-    return res_string
+    # So we can short cut this method by
+    # just doing the base string * the cols
+
+    return base_string * col_nums
 
 
 def to_dict(matches):
@@ -34,15 +35,39 @@ def to_dict(matches):
 
 ###Iterate Through Origin Files
 
-for i in range(len(list_origin_files)):
-    regex_string = regex_string_maker(list_column_values[i])
-    mycology_pattern = re.compile( regex_string, re.MULTILINE)
-    print(mycology_pattern)
-    matches = re.findall(mycology_pattern, list_origin_files[i])
 
-    to_dict(matches)
-    # dict_to_sql(myco_dict, session)
+# Make this a method so we can call it in debugging
+def matching():
+    for i in range(len(list_origin_files)):
+        regex_string = regex_string_maker(list_column_values[i])
+        mycology_pattern = re.compile(regex_string, re.MULTILINE)
 
+        print(mycology_pattern)
+
+        # I think you are getting off track here.
+        # I *think* you were trying to get the content of the file
+        # and here you are getting the name of the file
+        #
+        # Thus, the regex pattern you have going for your matches will not match anything
+        this_is_the_file_name = list_origin_files[i]
+        print(this_is_the_file_name)
+
+        with open(list_origin_files[i]) as content_file:
+            import pudb
+
+            pudb.set_trace()
+            content = content_file.read()
+            matches = re.findall(mycology_pattern, content)
+
+            # This line doesnt do anything by the way
+            to_dict(matches)
+            print("=" * 10)
+            print(matches)
+            print("=" * 10)
+            # dict_to_sql(myco_dict, session)
+
+
+matching()
 
 ###########################
 #########CUT###############
