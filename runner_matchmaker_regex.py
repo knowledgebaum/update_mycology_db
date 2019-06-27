@@ -5,12 +5,16 @@ from match_model import session, dict_to_sql
 
 def regex_string_maker(col_nums):
     base_string = "([A-Z]{3,} [A-Z]{3,}|[A-Z]{3,})(  .*\\n)"
-    end_string = ""
+    string_list = []
+    res_string = ""
 
     for i in range(col_nums):
-        end_string += base_string
+        string_list.append(base_string)
+        #res_string += base_string
+        #print(i)
 
-    return end_string
+    res_string = "".join(string_list)
+    return res_string
 
 
 def to_dict(matches):
@@ -31,10 +35,11 @@ def to_dict(matches):
 ###Iterate Through Origin Files
 
 for i in range(len(list_origin_files)):
-    mycology_pattern = re.compile(
-        regex_string_maker(list_column_values[i]), re.MULTILINE
-    )
+    regex_string = regex_string_maker(list_column_values[i])
+    mycology_pattern = re.compile( regex_string, re.MULTILINE)
+    print(mycology_pattern)
     matches = re.findall(mycology_pattern, list_origin_files[i])
+
     to_dict(matches)
     # dict_to_sql(myco_dict, session)
 
