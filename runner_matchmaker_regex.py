@@ -20,7 +20,6 @@ def regex_string_maker(col_nums):
 
 def to_dict(matches):
     mushroom_list = []
-
     for match in matches:
         # Key = even
         # Value = odd
@@ -28,9 +27,10 @@ def to_dict(matches):
         match_list_odd = match[1::2]  # Odd GROUPS
         output = dict(zip(match_list_even, match_list_odd))
         dict_to_sql(output, session)
-        mushroom_list.append(output)
+        #mushroom_list.append(output)
+        print(match_list_even)
 
-    return mushroom_list
+    #return mushroom_list
 
 
 ###Iterate Through Origin Files
@@ -53,9 +53,9 @@ def matching():
         print(this_is_the_file_name)
 
         with open(list_origin_files[i]) as content_file:
-            import pudb
+            #import pudb
 
-            pudb.set_trace()
+            #pudb.set_trace()
             content = content_file.read()
             matches = re.findall(mycology_pattern, content)
 
