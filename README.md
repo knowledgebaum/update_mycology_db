@@ -11,8 +11,4 @@ Run runner_matchmaker_regex.py to scrape the datafiles.
 The change that you needed to do is to read the contents of the actual file. Not the name. 
 
 
-Do you use an IDE? VSCode has a python debugger that might help you out. Otherwise i use PUDB which is 
-a python module that allows for command line debugging.
 
-
-https://pypi.org/project/pudb/
