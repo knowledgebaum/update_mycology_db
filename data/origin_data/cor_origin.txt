@@ -1,4 +1,4 @@
-1
+﻿1
 115
 1
 FAMILY  Auriscalpiaceae, Order Russulales, Class Agaricomycetes, Phylum Basidiomycota
@@ -1931,7 +1931,7 @@ BRANCH COLOR  "whitish to creamy or yellowish", often becoming cinnamon buff or 
 STEM  5-13cm x 2-5cm, usually narrowing downward, "fleshy but very tough, buried deep in ground (or wood)"^, (Arora), 
 ODOR  spicy-fragrant, (Arora), strong, somewhat disagreeable or like smoked bacon, (Castellano), pleasant (Ammirati)
 TASTE  
-EDIBILITY  edible and exceptional: thorough cooking needed to render it tender, for instance gentle saut�ing or parboiling followed by baking or stewing, (Arora), leave the base when collecting for food, so that it will fruit the next year, (Ammirati)
+EDIBILITY  edible and exceptional: thorough cooking needed to render it tender, for instance gentle sautéing or parboiling followed by baking or stewing, (Arora), leave the base when collecting for food, so that it will fruit the next year, (Ammirati)
 HABITAT  usually single at or near the bases of conifer trunks and stumps, fruiting usually in the late fall or winter^, (Arora), single, typically within 2 meters of the base of a living coniferous tree (Pseudotsuga, Pinus), fall, (Castellano)
 SPORE DEPOSIT  white^ (Castellano)
 MICROSCOPIC  spores 5-7 x 3-5 microns, elliptic, smooth, inamyloid, colorless^; basidia 4-spored, 40-60 x 4-8 microns, clavate; cystidia absent; clamp connections present, (Castellano), spores 5-7 x 3-5 microns, broadly elliptic, smooth, (Arora), spores 6.3-7.0 x 3.9-5.0 microns (Dai)
