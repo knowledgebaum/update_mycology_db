@@ -52,7 +52,7 @@ def matching():
         this_is_the_file_name = list_origin_files[i]
         print(this_is_the_file_name)
 
-        with open(list_origin_files[i]) as content_file:
+        with open(list_origin_files[i], encoding='ISO-8859-1') as content_file:
             #import pudb
 
             #pudb.set_trace()

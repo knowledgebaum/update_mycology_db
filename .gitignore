@@ -1,0 +1,7 @@
+venv/
+__pycache__
+Lib/
+.idea
+Scripts/
+*.pyc
+my_sqlite_db.db
